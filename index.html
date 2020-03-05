@@ -1,0 +1,478 @@
+<!doctype html>
+
+  <html lang="pt-br" class="no-js">
+  <head>
+
+    <!-- ANALYTICS -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116485462-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-116485462-1');
+    </script>
+    
+    <link rel="shortcut icon" href="img/ico.png">
+
+    <!-- ICONES PWA -->
+    <link rel="apple-touch-icon" href="img/ico-apple.jpg">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/ico-apple.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/ico-apple.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/ico-apple.jpg">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="img/fav.png">
+    <meta name="author" content="Doutor Tech">
+    <meta name="description" content="A Doutor Tech é uma plataforma gratuita que une pessoas que precisam de manutenção em seus computadores a técnicos de informática.">
+    <meta name="keywords" content="Técnico,Manuteção,Suporte,Assistência,Doutor Tech,Notebook,Computador,computadores,backup,Formatação,limpeza,recuperação de dados,app,aplicativo">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="css/estilo.css">
+
+
+    <title>Doutor Tech</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <!-- Scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js"></script>
+    <script> var scroll = new SmoothScroll('a[href*="#"]');</script>
+    
+    <script type="text/javascript">
+        window.smartlook||(function(d) {
+        var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+        var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+        c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
+        })(document);
+        smartlook('init', '222151332c441e8dee0a0b8c79d9f182477c2ab4');
+    </script>
+
+
+  </head>
+
+  <body>
+
+    <!-- TEXTO MUDANDO -->
+    <script type="text/javascript">
+    var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+
+    </script>
+
+    <!-- MENU MOBILE -->
+    <div class="dropdown">
+      <button class="menu-mbl" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Home</a>
+        <a class="dropdown-item" href="#servicos">O que fazemos</a>
+        <a class="dropdown-item" href="#parceiro">Seja nosso parceiro!</a>
+        <a class="dropdown-item" href="/ajuda/index.html">Ajuda</a>
+      </div>
+    </div>
+
+
+    <nav class="nav smooth-scroll">
+      <!-- <a href="#"><img src="img/ico.png" class="logo"></a> <h1 class="logo-txt">doutor.tech</h1> -->
+      <a href="#"><img src="img/logot.png" class="logot"></a>
+      <a href="#"><img src="img/ico.png" class="logo pcn"></a>
+
+      <!-- MENU PC -->
+      <div class="menu">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" data-scroll>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#servicos" data-scroll>O que fazemos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#parceiro" data-scroll>Seja nosso parceiro!</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/ajuda/index.html" target="_blank">Ajuda</a>
+          </li>
+
+
+        </ul>
+      </div>
+
+    </nav>
+
+    <br>
+
+    <header class="menu-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12">
+            <!-- <h1 class="branco">DOUTOR TECH É O MAIS  NOVO JEITO</h1> <br>
+            <h2 class="branco">DE CUIDAR DO SEU COMPUTADOR</h2> -->
+
+
+            <h1 style="color: #fff">
+              <a class="typewrite" data-period="3000" data-type='[ "Travou? ", "Está lento? ", "Pegou vírus? ", "Apagou sem querer? " ]'>
+              <span class="wrap"></span>
+              </a>
+            </h1>
+            <br>
+            <h2 class="branco">Chama um Doutor Tech!</h2>
+            <!-- <div class='icon-scroll'><div/> -->
+
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="beneficios" style=" background-color: #f5f5f5; padding-bottom: 40px;">
+      <div class="container">
+        <div class="row" >
+          <div class="col-sm-12 col-md-6">
+            
+            <div class="box-destaque">
+
+              <img src="img/computador.png" class="imagem-box">
+              <p class="texto-box">Com poucos cliques você informa o seu problema e nós enviamos um técnico para cuidar de tudo pra você.</p><br>
+              <a href="#como-funciona" class="botao-roxo">Saiba mais...</a>
+
+            </div>
+
+          </div>
+
+          <div class="col-sm-12 col-md-6">
+            
+            <div class="box-destaque">
+              <img src="img/mobile.png" class="imagem-box">
+              <p class="texto-box"> E você nem precisa instalar um aplicativo, basta abrir o navegador e acessar o nosso APP.</p><br>
+              <a href="http://app.doutor.tech" target="_blank" class="botao-roxo">Acessar APP</a>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+     <section id="como-funciona">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-sm-12 col-md-12">
+            <h1 class="titulo-como-funciona">Como funciona</h1> <br>
+            <p>Chamar um Doutor Tech é muito simples:</p><br>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <!-- PASSO 1 -->
+          <div class="col-sm-12 col-md-3 etapa">
+            <!-- <h1 class="ico-passo"><i class="fas fa-map-marker-alt"></i></h1> -->
+            <img src="img/mapa.png" class="ico-passo">
+            <p class="txt-passo">Você informa a sua localização.</p>
+          </div>
+
+          <!-- PASSO 2 -->
+          <div class="col-sm-12 col-md-3 etapa">
+            <!-- <h1 class="ico-passo"><i class="fas fa-laptop"></i></h1> -->
+            <img src="img/notebook.png" class="ico-passo">
+            <p class="txt-passo">Você informa o problema do seu computador.</p>
+          </div>
+
+          <!-- PASSO 3 -->
+          <div class="col-sm-12 col-md-3 etapa">
+            <!-- <h1 class="ico-passo"><i class="fas fa-cogs"></i></h1> -->
+            <img src="img/servico.png" class="ico-passo">
+            <p class="txt-passo">Nós apresentamos a solução e falamos quanto vai custar.</p>
+          </div>
+
+          <!-- PASSO 4 -->
+          <div class="col-sm-12 col-md-3 etapa">
+            <!-- <h1 class="ico-passo"><i class="fas fa-handshake"></i></h1> -->
+            <img src="img/doutor.png" class="ico-passo">
+            <p class="txt-passo">Se você concordar, nós enviamos um técnico para cuidar de tudo pra você.</p>
+          </div>
+
+        </div>
+
+
+      </div>
+    </section>
+
+
+    <section id="servicos">
+      <div class="container">
+        <div class="row" >
+
+          <div class="col-sm-12 col-md-12">
+            <h1 class="titulo">O que fazemos</h1> <br>
+            <p class="texto-servicos">A Doutor Tech é a mais nova plataforma criada para unir técnicos de informática e pessoas que precisam de manutenção nos seus computadores.<br>Agora, você tem todos esse serviços ao alcance das suas mãos:</p> 
+          </div> <br>
+
+
+          <!-- SERVICO 1 -->
+          <div class="col-sm-6 col-md-3">
+            <div class="icone-serv">
+              <img class="img-icone-serv" src="img/backup.png">
+              <p>Backup de arquivos</p>
+            </div>
+          </div>
+
+          <!-- SERVICO 2 -->
+          <div class="col-sm-6 col-md-3">
+            <div class="icone-serv">
+              <img class="img-icone-serv" src="img/formatacao.png">
+              <p>Formatação sem backup</p>
+            </div>
+          </div>
+
+          <!-- SERVICO 3 -->
+          <div class="col-sm-6 col-md-3">
+            <div class="icone-serv">
+              <img class="img-icone-serv" src="img/formatacao-backup.png">
+              <p>Formatação com backup</p>
+            </div>
+          </div>
+
+          <!-- SERVICO 4 -->
+          <div class="col-sm-6 col-md-3">
+            <div class="icone-serv">
+              <img class="img-icone-serv" src="img/virus.png">
+              <p>Remoção de vírus</p>
+            </div>
+          </div>
+
+
+          <!-- SERVICO 5 -->
+          <div class="col-sm-6 col-md-3">
+            <div class="icone-serv">
+              <img class="img-icone-serv" src="img/instalacao.png">
+              <p>Instalação de softwares</p>
+            </div>
+          </div>
+
+          <!-- SERVICO 6 -->
+          <div class="col-sm-6 col-md-3">
+            <div class="icone-serv">
+              <img class="img-icone-serv" src="img/desinstalacao.png">
+              <p>Remoção de softwares</p>
+            </div>
+          </div>
+
+          <!-- SERVICO 7 -->
+          <div class="col-sm-6 col-md-3">
+            <div class="icone-serv">
+              <img class="img-icone-serv" src="img/limpeza.png">
+              <p>Limpeza do computador</p>
+            </div>
+          </div>
+
+          <!-- SERVICO 8 -->
+          <div class="col-sm-6 col-md-3">
+            <div class="icone-serv">
+              <img class="img-icone-serv" src="img/recuperacao.png">
+              <p>Recuperação de arquivos</p>
+            </div>
+          </div>
+      
+           <br>
+
+          <div class="col-sm-12 col-md-12" style="  padding-top: 30px;">
+            <a href="servicos.html" class="botao-roxo">Saiba mais...</a>
+          </div>
+          
+
+        </div>  
+      </div>
+
+    </section>
+
+
+    <section id="parceiro">
+      <div class="container">
+        <div class="row" >
+
+          <div class="col-sm-12 col-md-12">
+            <h1>Você  pode ser um de nossos parceiros!</h1> <br>
+            <p>Se você quer trabalhar nos horários e locais que preferir e ainda escolher quanto vai ganhar, aqui é o seu lugar.</p> <br>
+            <a href="parceiros.html" class="botao-roxo-parc">Mais informações...</a>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="row" >
+
+          <div class="col-sm-12 col-md-12">
+          
+            <h1 class="titulo">Dúvidas?</h1> <br>
+            <h2 class="subtitulo">Essas são as mais comuns: </h2> <br>
+
+              <div class="col-sm-12 col-md-8 centered">
+
+                <!-- FAQ -->
+                <div class="accordion" id="accordionExample">
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          <i class="fas fa-angle-down" style="color: #7764f9"></i>&emsp; Quanto eu pago para utilizar a plataforma?
+                        </button>
+                      </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <div class="card-body">
+                        O uso da plataforma Doutor Tech é totalmente gratuito, você paga apenas pelo valor do serviço contratado. Consulte o valor dos nossos <a href="#" target="_blank"> serviços</a> para saber antecipadamente quanto vai pagar.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingTwo">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          <i class="fas fa-angle-down" style="color: #7764f9"></i>&emsp; Posso confiar na Doutor Tech?
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                      <div class="card-body">
+                        Sim. Todos os nossos parceiros são treinados e passam por uma avaliação para se habilitar a fazer a manutenção do seu computador. Caso algo saia do esperado, você pode entrar em contato conosco e abrir uma reclamação.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingThree">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          <i class="fas fa-angle-down" style="color: #7764f9"></i>&emsp; Por que preciso do meu CPF para me cadastrar?
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                      <div class="card-body">
+                        Solicitamos que você se cadastre usando o seu CPF para garantir que será criada apenas uma conta por pessoa. Mas fique tranquilo, todas as sua informações estão seguras conosco. Para saber mais, acesse a nossa <a href="#" target="_blank">Política de Privacidade</a>.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- FAQ -->
+
+                <br><br><br>
+
+                <p style="color: #796dea">Tem mais alguma dúvida? Acesse a nossa central de ajuda e suporte.<br> </p><br>
+                <a href="/ajuda/index.html" target="_blank" class="botao-roxo">Acessar!</a>
+
+              </div>
+         
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+
+    <footer>
+      <div class="container">
+        <div class="row" >
+
+          <div class="col-sm-12 col-md-4">
+            Doutor Tech 2018 - Todos os direitos reservados
+          </div>
+
+          <div class="col-sm-12 col-md-4">
+            <a class="link-footer" href="/ajuda/index.html">Central de Ajuda e Suporte</a>
+          </div>
+
+          <div class="col-sm-12 col-md-4">
+
+            <a class="link-social" href="https://www.facebook.com/Doutor-Tech-526860914416366" target="_blank"><i class="fab fa-facebook"></i></a> &ensp;
+            <a class="link-social" href="http://www.instagram.com/doutortechoficial" target="_blank"><i class="fab fa-instagram"></i> </a> &ensp;
+            <a class="link-social" href="https://www.youtube.com/channel/UCCDA9ac644FHkZitgysr51g?view_as=subscriber" target="_blank"><i class="fab fa-youtube-square"></i></a>
+
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+  </body>
+</html>

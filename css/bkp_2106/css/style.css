@@ -1,0 +1,27 @@
+body{
+	background: #eeeeee;
+}
+
+h1{
+	font-size: 22px;
+	color: #233d4f;
+}
+
+p{
+	font-size: 15px;
+}
+
+.row{
+	padding-top: 30px;
+	padding-bottom: 30px;
+	box-shadow: 2px 4px 5px 0px rgba(224,224,224,1);	
+}
+
+.linha{
+	margin-top: 30px;
+	background-color: #fff;
+}
+
+.padding{
+	padding: 30px;
+}
